@@ -4,21 +4,43 @@
 int main(void)
 {
     long frame = 0;
+    int m = 0;
 
     for (;;)
     {
-        if (frame % 2 == 0)
+        switch (m)
         {
-            printf("\r( + v + )_____ <ヨイショ      ");
+        case 0:
+            if (frame % 2 == 0)
+            {
+                printf("\r( + v + )_____ <ヨイショ      ");
+            }
+            else
+            {
+                printf("\r    ( - v - )／|__ < ヨイショ！");
+            }
+            if ((frame + 1) % 10 == 0)
+            {
+                m = 10;
+            }
+            break;
+        case 10:
+            if (frame % 2 == 0)
+            {
+                printf("\r    _____( + v + ) <ヨイショ!      ");
+            }
+            else
+            {
+                printf("\r __|＼( - v - ) < ヨイショ！");
+            }
+            if ((frame + 1) % 10 == 0)
+            {
+                m = 0;
+            }
+
+            break;
         }
-        else
-        {
-            printf("\r  ( - v - )／|__ < ヨイショ！");
-        }
-        if (frame % 10 == 0)
-        {
-            puts("");
-        }
+
         fflush(stdout);
 
         frame += 1;
