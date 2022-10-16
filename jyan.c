@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 
+int judge(char player_te, char cpu_te)
+{
+}
 int main(void)
 {
     static const char te[] = {'g', 'c', 'p'};
