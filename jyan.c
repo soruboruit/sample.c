@@ -4,6 +4,61 @@
 
 int judge(char player_te, char cpu_te)
 {
+    if (player_te == 'g')
+    {
+        if (cpu_te == 'g')
+        {
+            puts("引き分け");
+            return 0;
+        }
+        else if (cpu_te == 'c')
+        {
+            puts("プレイヤーの勝ち!");
+            return 1;
+        }
+        else if (cpu_te == 'p')
+        {
+            puts("CPUの勝ち!");
+            return -1;
+        }
+    }
+    else if (player_te == 'c')
+    {
+        if (cpu_te == 'g')
+        {
+            puts("CPUの勝ち!");
+            return -1;
+        }
+        else if (cpu_te == 'c')
+        {
+            puts("引き分け");
+            return 0;
+        }
+        else if (cpu_te == 'p')
+        {
+            puts("プレイヤーの勝ち!");
+            return 1;
+        }
+    }
+    else if (player_te == 'p')
+    {
+        if (cpu_te == 'g')
+        {
+            puts("プレイヤーの勝ち!");
+            return 1;
+        }
+        else if (cpu_te == 'c')
+        {
+            puts("CPUの勝ち!");
+            return -1;
+        }
+        else if (cpu_te == 'p')
+        {
+            puts("引き分け");
+            return 0;
+        }
+    }
+    return 2;
 }
 int main(void)
 {
@@ -25,50 +80,6 @@ int main(void)
         printf("CPUの手: %c\n", cpu_te);
         /*\n */
 
-        if (player_te == 'g')
-        {
-            if (cpu_te == 'g')
-            {
-                puts("引き分け");
-            }
-            else if (cpu_te == 'c')
-            {
-                puts("プレイヤーの勝ち!");
-            }
-            else if (cpu_te == 'p')
-            {
-                puts("CPUの勝ち!");
-            }
-        }
-        else if (player_te == 'c')
-        {
-            if (cpu_te == 'g')
-            {
-                puts("CPUの勝ち!");
-            }
-            else if (cpu_te == 'c')
-            {
-                puts("引き分け");
-            }
-            else if (cpu_te == 'p')
-            {
-                puts("プレイヤーの勝ち!");
-            }
-        }
-        else if (player_te == 'p')
-        {
-            if (cpu_te == 'g')
-            {
-                puts("プレイヤーの勝ち!");
-            }
-            else if (cpu_te == 'c')
-            {
-                puts("CPUの勝ち!");
-            }
-            else if (cpu_te == 'p')
-            {
-                puts("引き分け");
-            }
-        }
+        judge(player_te, cpu_te);
     }
 }
