@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+#include <assert.h>
 int judge(char player_te, char cpu_te)
 {
     if (player_te == 'g')
@@ -60,8 +60,22 @@ int judge(char player_te, char cpu_te)
     }
     return 2;
 }
+
+static void test(void)
+{
+    assert(judge('g', 'g') == 0);
+    assert(judge('g', 'c') == 1);
+    assert(judge('g', 'p') == -1);
+    assert(judge('c', 'g') == -1);
+    assert(judge('c', 'c') == 0);
+    assert(judge('c', 'p') == 1);
+    assert(judge('p', 'g') == 1);
+    assert(judge('p', 'c') == -1);
+    assert(judge('p', 'p') == 0);
+}
 int main(void)
 {
+    // test();
     static const char te[] = {'g', 'c', 'p'};
     char cmd[100];
 
