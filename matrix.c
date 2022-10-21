@@ -119,4 +119,6 @@ int main(void)
 
         judge(player_te, cpu_te);
     }
+
+    printf("11");
 }
